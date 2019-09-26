@@ -1,0 +1,253 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ocean Posts Slider\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
+"POT-Creation-Date: 2017-10-27 10:26+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-10-27 10:46+0000\n"
+"Last-Translator: sabiertas <angel@solucionesabiertas.es>\n"
+"Language-Team: Spanish (Spain)\n"
+"X-Generator: Loco - https://localise.biz/\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _esc_attr__;esc_attr_x;esc_attr_e;esc_html__;"
+"esc_html_e;esc_html_x;__;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Textdomain-Support: yes\n"
+"Language: es-ES\n"
+"X-Poedit-SearchPath-0: ."
+
+#: ocean-posts-slider.php:134 ocean-posts-slider.php:143
+msgid "Cheatin&#8217; huh?"
+msgstr "¿Haciendo trampas?"
+
+#: ocean-posts-slider.php:401
+msgid "Enter the transition speed of the slides."
+msgstr "Introduce la velocidad de las transiciones entre diapositivas."
+
+#: ocean-posts-slider.php:427
+msgid "Enter the slug of your category to exclude, separate cat by commas."
+msgstr "Introduce el slug de las categorías a excluir, separándolas por comas."
+
+#: ocean-posts-slider.php:444
+msgid "Designates the ascending or descending order."
+msgstr "Elije la ordenación ascendente o descendente"
+
+#: ocean-posts-slider.php:466
+msgid "Sort retrieved posts by parameter."
+msgstr "Ordenar las entradas según parametro"
+
+#: ocean-posts-slider.php:472
+msgid "Slug"
+msgstr "Slug"
+
+#: ocean-posts-slider.php:478
+msgid "Comment Count"
+msgstr "Número de comentarios"
+
+#: ocean-posts-slider.php:500
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: includes/posts-slider.php:44 ocean-posts-slider.php:366
+msgid "Read More"
+msgstr "Leer más"
+
+#: includes/posts-slider.php:135
+msgid "by"
+msgstr "por"
+
+#: ocean-posts-slider.php:195
+msgid "Ocean Posts Slider requires that you use OceanWP as your parent theme."
+msgstr "Ocean Post Slider necesita que OceanWP sea el tema padre."
+
+#: ocean-posts-slider.php:195
+msgid "Install OceanWP Now"
+msgstr "Instalar OceanWP ahora"
+
+#: ocean-posts-slider.php:221
+msgid "Posts Slider"
+msgstr "Carrusel de entradas"
+
+#: ocean-posts-slider.php:222
+msgid "Posts Slider Item"
+msgstr "Entrada del carrusel"
+
+#: ocean-posts-slider.php:223
+msgid "Add New"
+msgstr "Añadir nueva"
+
+#: ocean-posts-slider.php:224 ocean-posts-slider.php:226
+msgid "Add New Item"
+msgstr "Añadir nuevo elemento"
+
+#: ocean-posts-slider.php:225
+msgid "Edit Item"
+msgstr "Editar entrada"
+
+#: ocean-posts-slider.php:227
+msgid "View Item"
+msgstr "Ver entrada"
+
+#: ocean-posts-slider.php:228
+msgid "Search Items"
+msgstr "Buscar entradas"
+
+#: ocean-posts-slider.php:229
+msgid "No Items Found"
+msgstr "Entradas no encontradas"
+
+#: ocean-posts-slider.php:230
+msgid "No Items Found In Trash"
+msgstr "No se han encontrado entradas en la papelera"
+
+#: ocean-posts-slider.php:273
+msgid "Posts Slider Settings"
+msgstr "Ajustes del carrusel de entradas"
+
+#: ocean-posts-slider.php:285
+msgid "General"
+msgstr "General"
+
+#: ocean-posts-slider.php:295
+msgid "Style"
+msgstr "Estilo"
+
+#: ocean-posts-slider.php:296
+msgid "Select the slider style."
+msgstr "Selecciona el estilo de diapositiva"
+
+#: ocean-posts-slider.php:298
+msgid "One Image"
+msgstr "Una imagen"
+
+#: ocean-posts-slider.php:299
+msgid "Three Images"
+msgstr "Tres imagenes"
+
+#: ocean-posts-slider.php:316
+msgid "Number"
+msgstr "Número"
+
+#: ocean-posts-slider.php:317
+msgid "Enter the number of posts to display."
+msgstr "Introduce el numero de entradas a mostrar"
+
+#: ocean-posts-slider.php:333
+msgid "Size"
+msgstr "Tamaño"
+
+#: ocean-posts-slider.php:334
+msgid "Select the size of your images."
+msgstr "Selecciona el tamaño de las imagenes"
+
+#: ocean-posts-slider.php:336
+msgid "Thumbnail (150 x 150 hard cropped)"
+msgstr "Miniatura (150 x 150 recortada)"
+
+#: ocean-posts-slider.php:337
+msgid "Medium (300 x 300 max height 300px)"
+msgstr "Medio (300 x 300 con una altura máxima de 300)"
+
+#: ocean-posts-slider.php:338
+msgid "Medium Large (768 x 0 infinite height)"
+msgstr "Medio largo (768 x 0 altura automática)"
+
+#: ocean-posts-slider.php:339
+msgid "Large (1024 x 1024 max height 1024px)"
+msgstr "Largo (1024 x 1024 con una altura máxima de 1024px)"
+
+#: ocean-posts-slider.php:340
+msgid "Full (original size uploaded)"
+msgstr "Completa (Igual al tamaño subido)"
+
+#: ocean-posts-slider.php:357
+msgid "Read More Text"
+msgstr "Texto para el leer más"
+
+#: ocean-posts-slider.php:358
+msgid "Enter your custom text for the read more button."
+msgstr "Introduce el texto personalizado para el botón de leer más."
+
+#: ocean-posts-slider.php:373
+msgid "Slide"
+msgstr "Dispositiva"
+
+#: ocean-posts-slider.php:383
+msgid "Margin"
+msgstr "Margen"
+
+#: ocean-posts-slider.php:384
+msgid ""
+"Add a space between the slider and your content. eg 0 0 20px 0 (top right "
+"bottom left)."
+msgstr ""
+"Añadir espacio entre la diapositiva y el contenido. ejem. 0 0 20px 0 (arriba "
+"drecha abajo izquierda)."
+
+#: ocean-posts-slider.php:400
+msgid "Speed"
+msgstr "Velocidad"
+
+#: ocean-posts-slider.php:416
+msgid "Posts"
+msgstr "Entradas"
+
+#: ocean-posts-slider.php:426
+msgid "Exclude Cat"
+msgstr "Excluir categoría"
+
+#: ocean-posts-slider.php:443
+msgid "Order"
+msgstr "Orden"
+
+#: ocean-posts-slider.php:446
+msgid "Ascending Order"
+msgstr "Ascendente"
+
+#: ocean-posts-slider.php:447
+msgid "Descending Order"
+msgstr "Descendente"
+
+#: ocean-posts-slider.php:465
+msgid "Order By"
+msgstr "Ordenar por"
+
+#: ocean-posts-slider.php:468
+msgid "No Order"
+msgstr "Sin ordenar"
+
+#: ocean-posts-slider.php:469
+msgid "ID"
+msgstr "ID"
+
+#: ocean-posts-slider.php:470
+msgid "Author"
+msgstr "Autor"
+
+#: ocean-posts-slider.php:471
+msgid "Title"
+msgstr "Título"
+
+#: ocean-posts-slider.php:473
+msgid "Post Type"
+msgstr "Tipo de entrada"
+
+#: ocean-posts-slider.php:474
+msgid "Date"
+msgstr "Fecha"
+
+#: ocean-posts-slider.php:475
+msgid "Modified"
+msgstr "Modificado"
+
+#: ocean-posts-slider.php:476
+msgid "Parent"
+msgstr "Padre"
+
+#: ocean-posts-slider.php:477
+msgid "Random"
+msgstr "Aleatorio"
