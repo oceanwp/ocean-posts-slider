@@ -1,9 +1,9 @@
 === Ocean Posts Slider ===
-Contributors: oceanwp
+Contributors: oceanwp, apprimit
 Tags: slider, posts slider, oceanwp
-Requires at least: 4.5
-Tested up to: 5.2
-Stable tag: 1.0.13
+Requires at least: 5.3
+Tested up to: 5.7
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,12 @@ This plugin will only work with the [OceanWP](https://oceanwp.org/) theme.
 3. Three Images Style.
 
 == Changelog ==
+
+= 1.1.1 =
+- Added: Version updated for WordPress 5.7.
+
+= 1.1.0 =
+- Added: Version updated for WordPress 5.4.
 
 = 1.0.13 =
 - Added: Codes for the Freemius switch.
