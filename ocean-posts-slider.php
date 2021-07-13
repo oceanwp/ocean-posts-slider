@@ -519,17 +519,17 @@ final class Ocean_Posts_Slider {
 		);
 
 		$manager->register_control(
-			'oceanwp_ps_space_between', // Same as setting name.
+			'oceanwp_ps_margin', // Same as setting name.
 			array(
 				'section'     => 'oceanwp_ps_slide',
 				'type'        => 'text',
-				'label'       => esc_html__( 'Space Between Slides', 'ocean-posts-slider' ),
-				'description' => esc_html__( 'Add a space between the slides. example: 30', 'ocean-posts-slider' ),
+				'label'       => esc_html__( 'Margin', 'ocean-posts-slider' ),
+				'description' => esc_html__( 'Add a space between the slider and your content. eg 0 0 20px 0 (top right bottom left).', 'ocean-posts-slider' ),
 			)
 		);
 
 		$manager->register_setting(
-			'oceanwp_ps_space_between', // Same as control name.
+			'oceanwp_ps_margin', // Same as control name.
 			array(
 				'sanitize_callback' => 'sanitize_text_field',
 			)
