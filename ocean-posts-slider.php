@@ -208,10 +208,7 @@ final class Ocean_Posts_Slider {
 	public function ops_scripts() {
 		// Load vendors scripts.
 		if ( is_plugin_active( 'elementor/elementor.php' ) ) {
-			if ( ! \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
-				wp_enqueue_script( 'swiper', plugins_url( '/assets/vendors/swiper/swiper-bundle.min.js', __FILE__ ), array(), '6.7.1', true );
-				wp_enqueue_style( 'swiper', plugins_url( '/assets/vendors/swiper/swiper-bundle.min.css', __FILE__ ) );
-			}
+			wp_enqueue_script( 'swiper', plugins_url( '/assets/vendors/swiper/swiper-bundle.min.js', __FILE__ ), array(), '6.7.1', true );
 		} else {
 			wp_enqueue_script( 'swiper', plugins_url( '/assets/vendors/swiper/swiper-bundle.min.js', __FILE__ ), array(), '6.7.1', true );
 			wp_enqueue_style( 'swiper', plugins_url( '/assets/vendors/swiper/swiper-bundle.min.css', __FILE__ ) );
