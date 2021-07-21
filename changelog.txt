@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.0.1 =
+- Fixed: Conflict swiper js plugin with elementor swiper.
+
 = 2.0.0 =
 - Added: Vanilla JS.
 

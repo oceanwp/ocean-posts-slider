@@ -21,11 +21,11 @@ class OW_PostsSlider extends OW_Base {
         super.onInit();
 
         if (this.hasPostsSlider()) {
-            this.initFlickity();
+            this.initSwiper();
         }
     }
 
-    initFlickity() {
+    initSwiper() {
         this.elements.postsLists.forEach((postsList) => {
             const typeTwo = postsList.classList.contains("two");
 
