@@ -58,7 +58,7 @@ if ( ! class_exists( 'OceanWP_Posts_Slider_Shortcode' ) ) {
 			$heading = apply_filters( 'ops_posts_heading', 'h2' );
 
 			// Add classes
-			$classes   = array( 'oceanwp-post-list', 'clr', 'swiper-container' );
+			$classes   = array( 'oceanwp-post-list', 'clr', 'oceanwp-swiper-container' );
 			$classes[] = $style;
 			if ( 'one' == $style ) {
 				$classes[] = 'container';
@@ -167,7 +167,7 @@ if ( ! class_exists( 'OceanWP_Posts_Slider_Shortcode' ) ) {
 
 				<div <?php echo is_rtl() ? 'dir="rtl"' : ''; ?> class="<?php echo esc_attr( $classes ); ?>"<?php echo $add_style; ?> data-slideshow="<?php echo esc_attr( $speed ); ?>" data-number="<?php echo esc_attr( $per_slide ); ?>" data-space-between="<?php echo esc_attr( $spaceBetween ); ?>">
 
-					<div class="posts-slider clr swiper-wrapper">
+					<div class="posts-slider clr oceanwp-swiper-wrapper">
 
 						<?php
 						// Start loop
@@ -177,7 +177,7 @@ if ( ! class_exists( 'OceanWP_Posts_Slider_Shortcode' ) ) {
 							if ( has_post_thumbnail() ) {
 								?>
 
-								<article id="post-<?php the_ID(); ?>" <?php post_class( 'clr swiper-slide' ); ?>>
+								<article id="post-<?php the_ID(); ?>" <?php post_class( 'clr oceanwp-swiper-slide' ); ?>>
 
 									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 
@@ -263,14 +263,14 @@ if ( ! class_exists( 'OceanWP_Posts_Slider_Shortcode' ) ) {
 					</div>
 
 					<!-- If we need pagination -->
-					<div class="swiper-pagination"></div>
+					<div class="oceanwp-swiper-pagination"></div>
 
 					<!-- If we need navigation buttons -->
-					<div class="swiper-button-prev"></div>
-					<div class="swiper-button-next"></div>
+					<div class="oceanwp-swiper-button-prev oceanwp-swiper-button-white"></div>
+					<div class="oceanwp-swiper-button-next oceanwp-swiper-button-white"></div>
 
 					<!-- If we need scrollbar -->
-					<div class="swiper-scrollbar"></div>
+					<div class="oceanwp-swiper-scrollbar"></div>
 				</div>
 
 				<?php

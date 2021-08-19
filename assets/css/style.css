@@ -4,10 +4,6 @@
     display: block; }
   .oceanwp-post-list article img {
     width: 100%; }
-  .oceanwp-post-list .swiper-button-next::after,
-  .oceanwp-post-list .swiper-button-prev::after {
-    font-size: 27px;
-    color: #fff; }
 
 /* Next/Prev buttons */
 .oceanwp-post-list .slick-arrow {
