@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 2.0.2 =
+- Fixed: Navigation: arrows.
+- Fixed: Compatibility: Elementor Swiper JS causing duplicate navigation arrows.
+- Fixed: Compatibility: JetPack causing duplicate navigation arrows.
+
 = 2.0.1 =
 - Fixed: Conflict swiper js plugin with elementor swiper.
 
