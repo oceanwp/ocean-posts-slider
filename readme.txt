@@ -1,9 +1,9 @@
 === Ocean Posts Slider ===
-Contributors: oceanwp, apprimit
+Contributors: oceanwp, apprimit, wpfleek
 Tags: slider, posts slider, oceanwp
 Requires at least: 5.3
-Tested up to: 5.7
-Stable tag: 1.1.1
+Tested up to: 5.9
+Stable tag: 2.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,20 @@ This plugin will only work with the [OceanWP](https://oceanwp.org/) theme.
 3. Three Images Style.
 
 == Changelog ==
+
+= 2.0.3 =
+- Added: Updated: WordPress version number for compatibility.
+
+= 2.0.2 =
+- Fixed: Navigation: arrows.
+- Fixed: Compatibility: Elementor Swiper JS causing duplicate navigation arrows.
+- Fixed: Compatibility: JetPack causing duplicate navigation arrows.
+
+= 2.0.1 =
+- Fixed: Conflict swiper js plugin with elementor swiper.
+
+= 2.0.0 =
+- Added: Vanilla JS.
 
 = 1.1.1 =
 - Added: Version updated for WordPress 5.7.

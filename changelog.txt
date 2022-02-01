@@ -1,0 +1,79 @@
+== Changelog ==
+
+= 2.0.3 =
+- Added: Updated: WordPress version number for compatibility.
+
+= 2.0.2 =
+- Fixed: Navigation: arrows.
+- Fixed: Compatibility: Elementor Swiper JS causing duplicate navigation arrows.
+- Fixed: Compatibility: JetPack causing duplicate navigation arrows.
+
+= 2.0.1 =
+- Fixed: Conflict swiper js plugin with elementor swiper.
+
+= 2.0.0 =
+- Added: Vanilla JS.
+
+= 1.1.1 =
+- Added: Version updated for WordPress 5.7.
+
+= 1.1.0 =
+- Added: Version updated for WordPress 5.4.
+
+= 1.0.13 =
+- Added: Codes for the Freemius switch.
+
+= 1.0.12 =
+- Added: Filter for the post heading tags.
+
+= 1.0.11 =
+- Added: Polish translation, thanks to Fin Fafarafiel.
+- Tweak: e.preventDefault(); used instead of return false; for the modal script so you can add additional events.
+- Tweak: Better approch for calling the metabox scripts.
+
+= 1.0.10 =
+- Added: New setting to only display the first post of each categories, thank you to Stéphane Legrand.
+
+= 1.0.9 =
+- Added: Spanish language, thank you to Angel Julian Mena.
+- Deleted: Admin notice if OceanWP is not the theme used.
+
+= 1.0.8 =
+- Fixed: Capabilities issue in the metabox.
+
+= 1.0.7 =
+- Tweak: Changed the select2 script to avoid plugins conflicts.
+
+= 1.0.6 =
+- Tweak: Some code improvements for the metabox.
+
+= 1.0.5.2 =
+- Added: New select field to choose your post type to display in the slider, default is post.
+- Tweak: JS script, if the carousel script is disabled, there will be no error in the console.
+- Fixed: Issue with the primary color arrays.
+- Deleted: Image resizer, directly incorporated into Ocean Extra.
+
+= 1.0.5.1 =
+- Fixed: Issue with style.
+
+= 1.0.5 =
+- Fixed: Issue with the slide transition on mobile.
+
+= 1.0.4 =
+- Added: New field "Include Cat" to only show some categories on the slider.
+
+= 1.0.3.1 =
+- Tweak: Admin script loaded only when necessary.
+
+= 1.0.3 =
+- Added: New option "Number Per Slide" to add your custom number of posts per slide.
+- Added: New options "Image Width" and "Image Height" to add your own images sizes.
+
+= 1.0.2 =
+- Fixed: Small issue with variables.
+
+= 1.0.1 =
+- Fixed: Conflict with Ocean Product Sharing.
+
+= 1.0.0 =
+- Initial release.
