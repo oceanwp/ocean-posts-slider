@@ -6,8 +6,8 @@
  * Version:             2.0.3
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
- * Requires at least:   5.3
- * Tested up to:        5.9
+ * Requires at least:   5.6
+ * Tested up to:        6.0.0
  *
  * Text Domain: ocean-posts-slider
  * Domain Path: /languages
