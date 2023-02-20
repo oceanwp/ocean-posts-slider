@@ -1,9 +1,12 @@
 .oceanwp-post-list {
-  z-index: 1; }
-  .oceanwp-post-list .posts-slider.slick-list, .oceanwp-post-list .posts-slider.slick-slider {
-    display: block; }
-  .oceanwp-post-list article img {
-    width: 100%; }
+  z-index: 1;
+}
+.oceanwp-post-list .posts-slider.slick-list, .oceanwp-post-list .posts-slider.slick-slider {
+  display: block;
+}
+.oceanwp-post-list article img {
+  width: 100%;
+}
 
 /* Next/Prev buttons */
 .oceanwp-post-list .slick-arrow {
@@ -16,30 +19,34 @@
   margin-top: -25px;
   opacity: 0;
   background-color: transparent;
-  border: 1px solid #fff; }
-  .oceanwp-post-list .slick-arrow:hover {
-    color: #666;
-    background-color: #fff; }
-
+  border: 1px solid #fff;
+}
+.oceanwp-post-list .slick-arrow:hover {
+  color: #666;
+  background-color: #fff;
+}
 .oceanwp-post-list .slick-prev {
-  left: 20px; }
-  [dir="rtl"] .oceanwp-post-list .slick-prev {
-    left: auto;
-    right: 20px; }
-
+  left: 20px;
+}
+[dir=rtl] .oceanwp-post-list .slick-prev {
+  left: auto;
+  right: 20px;
+}
 .oceanwp-post-list .slick-next {
-  right: 20px; }
-  [dir="rtl"] .oceanwp-post-list .slick-next {
-    right: auto;
-    left: 20px; }
-
+  right: 20px;
+}
+[dir=rtl] .oceanwp-post-list .slick-next {
+  right: auto;
+  left: 20px;
+}
 .oceanwp-post-list:hover .slick-arrow {
-  opacity: 1; }
+  opacity: 1;
+}
 
 /* Style one */
 .oceanwp-post-list.one article {
-  position: relative; }
-
+  position: relative;
+}
 .oceanwp-post-list.one .slide-overlay-wrap {
   position: absolute;
   z-index: 1;
@@ -53,40 +60,42 @@
   -o-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   text-align: center;
-  background: rgba(0, 0, 0, 0.2); }
-  .oceanwp-post-list.one .slide-overlay-wrap:before {
-    display: inline-block;
-    height: 100%;
-    content: "";
-    vertical-align: middle; }
-
+  background: rgba(0, 0, 0, 0.2);
+}
+.oceanwp-post-list.one .slide-overlay-wrap:before {
+  display: inline-block;
+  height: 100%;
+  content: "";
+  vertical-align: middle;
+}
 .oceanwp-post-list.one article:hover .slide-overlay-wrap {
-  background: rgba(0, 0, 0, 0.3); }
-
+  background: rgba(0, 0, 0, 0.3);
+}
 .oceanwp-post-list.one .slide-overlay {
   z-index: 100;
   display: inline-block;
   width: 75%;
-  vertical-align: middle; }
-
+  vertical-align: middle;
+}
 .oceanwp-post-list.one .slide-overlay,
 .oceanwp-post-list.one .oceanwp-post-category a,
 .oceanwp-post-list.one h2 a,
 .oceanwp-post-list.one .oceanwp-post-date a {
-  color: #fff; }
-
+  color: #fff;
+}
 .oceanwp-post-list.one .oceanwp-post-category:hover {
   color: #13aff0;
-  background-color: #fff; }
-  .oceanwp-post-list.one .oceanwp-post-category:hover a {
-    color: #13aff0; }
-
+  background-color: #fff;
+}
+.oceanwp-post-list.one .oceanwp-post-category:hover a {
+  color: #13aff0;
+}
 .oceanwp-post-list.one .line {
   display: block;
   width: 50px;
   margin: 10px auto;
-  border-top: 2px solid #fff; }
-
+  border-top: 2px solid #fff;
+}
 .oceanwp-post-list.one h2 {
   font-size: 45px;
   font-weight: 600;
@@ -94,16 +103,16 @@
   display: block;
   margin: 0;
   padding-bottom: 5px;
-  color: #fff; }
-
+  color: #fff;
+}
 .oceanwp-post-list.one .oceanwp-post-date {
   font-size: 10px;
   display: block;
   margin: 15px 0 20px;
   text-align: center;
   letter-spacing: 1px;
-  text-transform: uppercase; }
-
+  text-transform: uppercase;
+}
 .oceanwp-post-list.one .readmore {
   font-size: 12px;
   line-height: 1.4;
@@ -113,13 +122,15 @@
   text-transform: uppercase;
   color: #fff;
   border: 1px solid #f1f1f1;
-  border-radius: 20px; }
-  .oceanwp-post-list.one .readmore:hover {
-    border-color: #13aff0;
-    background-color: #13aff0; }
-
+  border-radius: 20px;
+}
+.oceanwp-post-list.one .readmore:hover {
+  border-color: #13aff0;
+  background-color: #13aff0;
+}
 .oceanwp-post-list.one .slick-arrow {
-  border-radius: 50%; }
+  border-radius: 50%;
+}
 
 .oceanwp-post-list.one .oceanwp-post-category,
 .oceanwp-post-list.two .oceanwp-post-category {
@@ -136,7 +147,8 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   border-radius: 20px;
-  background-color: #13aff0; }
+  background-color: #13aff0;
+}
 
 /* Style two */
 .oceanwp-post-list.two .slick-arrow {
@@ -146,64 +158,81 @@
   font-size: 18px;
   width: 30px;
   height: 30px;
-  line-height: 30px; }
-  .oceanwp-post-list.two .slick-arrow:hover {
-    background-color: #eee; }
+  line-height: 30px;
+}
+.oceanwp-post-list.two .slick-arrow:hover {
+  background-color: #eee;
+}
 
 .oceanwp-post-list.two {
-  position: relative; }
-  .oceanwp-post-list.two article {
-    position: relative; }
-  .oceanwp-post-list.two img {
-    width: 100%; }
-  .oceanwp-post-list.two .slide-overlay-wrap,
-  .oceanwp-post-list.two .oceanwp-post-excerpt {
-    transition: all 1s cubic-bezier(0.17, 0.04, 0.03, 0.94);
-    -webkit-transition: all 1s cubic-bezier(0.17, 0.04, 0.03, 0.94);
-    -moz-transition: all 1s cubic-bezier(0.17, 0.04, 0.03, 0.94);
-    -o-transition: all 1s cubic-bezier(0.17, 0.04, 0.03, 0.94);
-    -ms-transition: all 1s cubic-bezier(0.17, 0.04, 0.03, 0.94); }
-  .oceanwp-post-list.two .slide-overlay-wrap {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.4); }
-  .oceanwp-post-list.two article:hover .slide-overlay-wrap {
-    background-color: #13aff0; }
-  .oceanwp-post-list.two .slide-overlay,
-  .oceanwp-post-list.two .oceanwp-post-category a,
-  .oceanwp-post-list.two h2 a,
-  .oceanwp-post-list.two .oceanwp-post-excerpt {
-    color: #fff; }
-  .oceanwp-post-list.two .oceanwp-post-category {
-    font-size: 12px;
-    padding: 4px 12px;
-    letter-spacing: 1px;
-    text-transform: capitalize; }
-  .oceanwp-post-list.two article:hover .oceanwp-post-category {
-    color: #13aff0;
-    background-color: #fff; }
-    .oceanwp-post-list.two article:hover .oceanwp-post-category a {
-      color: #13aff0; }
-  .oceanwp-post-list.two h2 {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.2;
-    margin: 0 0 10px;
-    text-transform: capitalize; }
-  .oceanwp-post-list.two .oceanwp-post-excerpt {
-    overflow: hidden;
-    max-height: 0; }
-    .oceanwp-post-list.two .oceanwp-post-excerpt p {
-      margin: 0 0 10px; }
-    .oceanwp-post-list.two .oceanwp-post-excerpt .readmore {
-      font-size: 10px;
-      line-height: 1.4;
-      display: inline-block;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: #fff; }
-  .oceanwp-post-list.two article:hover .oceanwp-post-excerpt {
-    max-height: 250px; }
+  position: relative;
+}
+.oceanwp-post-list.two article {
+  position: relative;
+}
+.oceanwp-post-list.two img {
+  width: 100%;
+}
+.oceanwp-post-list.two .slide-overlay-wrap,
+.oceanwp-post-list.two .oceanwp-post-excerpt {
+  transition: all 1s cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  -webkit-transition: all 1s cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  -moz-transition: all 1s cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  -o-transition: all 1s cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  -ms-transition: all 1s cubic-bezier(0.17, 0.04, 0.03, 0.94);
+}
+.oceanwp-post-list.two .slide-overlay-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.oceanwp-post-list.two article:hover .slide-overlay-wrap {
+  background-color: #13aff0;
+}
+.oceanwp-post-list.two .slide-overlay,
+.oceanwp-post-list.two .oceanwp-post-category a,
+.oceanwp-post-list.two h2 a,
+.oceanwp-post-list.two .oceanwp-post-excerpt {
+  color: #fff;
+}
+.oceanwp-post-list.two .oceanwp-post-category {
+  font-size: 12px;
+  padding: 4px 12px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+.oceanwp-post-list.two article:hover .oceanwp-post-category {
+  color: #13aff0;
+  background-color: #fff;
+}
+.oceanwp-post-list.two article:hover .oceanwp-post-category a {
+  color: #13aff0;
+}
+.oceanwp-post-list.two h2 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 10px;
+  text-transform: capitalize;
+}
+.oceanwp-post-list.two .oceanwp-post-excerpt {
+  overflow: hidden;
+  max-height: 0;
+}
+.oceanwp-post-list.two .oceanwp-post-excerpt p {
+  margin: 0 0 10px;
+}
+.oceanwp-post-list.two .oceanwp-post-excerpt .readmore {
+  font-size: 10px;
+  line-height: 1.4;
+  display: inline-block;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.oceanwp-post-list.two article:hover .oceanwp-post-excerpt {
+  max-height: 250px;
+}
