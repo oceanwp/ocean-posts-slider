@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.0.4 - FEB 28 2023 =
+- Added: Prevent Elementor swiper scripts (3.11+ version) impacting the slider script.
+
 = 2.0.3 =
 - Updated: WordPress version number for compatibility.
 

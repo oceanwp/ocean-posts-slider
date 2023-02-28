@@ -2,8 +2,9 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: slider, posts slider, oceanwp
 Requires at least: 5.6
-Tested up to: 6.0.0
-Stable tag: 2.0.3
+Tested up to: 6.1.1
+Stable tag: 2.0.4
+Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +32,9 @@ This plugin will only work with the [OceanWP](https://oceanwp.org/) theme.
 3. Three Images Style.
 
 == Changelog ==
+
+= 2.0.4 - FEB 28 2023 =
+- Added: Prevent Elementor swiper scripts (3.11+ version) impacting the slider script.
 
 = 2.0.3 =
 - Updated: WordPress version number for compatibility.
