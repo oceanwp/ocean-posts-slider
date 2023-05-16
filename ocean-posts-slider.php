@@ -7,7 +7,7 @@
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
- * Tested up to:        6.1.1
+ * Tested up to:        6.2
  *
  * Text Domain: ocean-posts-slider
  * Domain Path: /languages
@@ -69,6 +69,22 @@ final class Ocean_Posts_Slider {
 	 * @since   1.0.0
 	 */
 	public $version;
+
+	/**
+	 * The plugin url.
+	 *
+	 * @var     string
+	 * @access  public
+	 */
+	public $plugin_url;
+
+	/**
+	 * The plugin path.
+	 *
+	 * @var     string
+	 * @access  public
+	 */
+	public $plugin_path;
 
 	// Admin - Start
 	/**

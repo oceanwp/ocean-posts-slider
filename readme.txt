@@ -2,7 +2,7 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: slider, posts slider, oceanwp
 Requires at least: 5.6
-Tested up to: 6.1.1
+Tested up to: 6.2
 Stable tag: 2.0.4
 Requires PHP: 7.2
 License: GPLv2 or later
