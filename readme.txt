@@ -2,7 +2,7 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: slider, posts slider, oceanwp
 Requires at least: 5.6
-Tested up to: 6.2
+Tested up to: 6.2.1
 Stable tag: 2.0.5
 Requires PHP: 7.2
 License: GPLv2 or later
@@ -33,9 +33,9 @@ This plugin will only work with the [OceanWP](https://oceanwp.org/) theme.
 
 == Changelog ==
 
-= 2.0.5 - MAY 17 2023 =
+= 2.0.5 - MAY 22 2023 =
 - Added: Compatibility: SiteOrigin: Custom templates support.
-- Compatibility: PHP 8.2: Creation of dynamic property Ocean_Posts_Slider::$plugin_path and Ocean_Posts_Slider::$plugin_url is deprecated.
+- Added: Compatibility: PHP 8.2.6: Creation of dynamic property Ocean_Posts_Slider::$plugin_path and Ocean_Posts_Slider::$plugin_url is deprecated.
 
 = 2.0.4 - FEB 28 2023 =
 - Added: Prevent Elementor swiper scripts (3.11+ version) impacting the slider script.

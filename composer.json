@@ -25,6 +25,6 @@
         "post-update-cmd": [
             "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs"
         ],
-        "make-pot": "wp i18n make-pot . languages/ocean-posts-slider.pot"
+        "make-pot": "wp i18n make-pot . languages/ocean-posts-slider.pot --exclude=build"
     }
 }
