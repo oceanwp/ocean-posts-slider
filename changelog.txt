@@ -1,6 +1,6 @@
 == Changelog ==
 
-= 2.0.5 - MAY 22 2023 =
+= 2.0.5 - MAY 23 2023 =
 - Added: Compatibility: SiteOrigin: Custom templates support.
 - Added: Compatibility: PHP 8.2.6: Creation of dynamic property Ocean_Posts_Slider::$plugin_path and Ocean_Posts_Slider::$plugin_url is deprecated.
 
