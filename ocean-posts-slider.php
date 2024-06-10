@@ -17,6 +17,8 @@
  * @author OceanWP
  */
 
+use Elementor\Plugin;
+
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -226,13 +228,62 @@ final class Ocean_Posts_Slider {
 	}
 
 	/**
+     * Check if the current page requires Swiper.
+     *
+     * @since 2.0.8
+     * @return bool
+     */
+    public function is_swiper_required() {
+        // Check specific conditions where Swiper is needed.
+        // Example: Check if the current post type is 'ocean_posts_slider' or a specific shortcode is used.
+        if ( is_singular('ocean_posts_slider') || has_shortcode(get_post()->post_content, 'ocean_posts_slider') ) {
+            return true;
+        }
+        return false;
+    }
+
+	/**
 	 * Enqueue scripts
 	 *
 	 * @since  1.0.0
 	 */
 	public function ops_scripts() {
+
+		if ( !$this->is_swiper_required() ) {
+            return;
+        }
+
 		// Load vendors scripts.
-		wp_enqueue_script( 'swiper', plugins_url( '/assets/vendors/swiper/swiper-bundle.min.js', __FILE__ ), array(), '6.7.1', true );
+
+		// Register the 'swiper' script only if the feature is active.
+		if ( Plugin::$instance->experiments->is_feature_active( 'e_swiper_latest' ) ) {
+			// Deregister the existing Swiper script if already registered.
+			if ( class_exists('Ocean_Elementor_Widgets') ) { 
+				if (wp_script_is('swiper', 'registered')) {
+					wp_deregister_script('swiper');
+				}
+			}
+
+			wp_enqueue_script( 
+				'swiper', 
+				plugins_url( '/assets/vendors/swiper/6.7.1/swiper-bundle.min.js',
+				__FILE__ ), 
+				array(), 
+				'6.7.1', 
+				true 
+			);
+
+		} else {
+			wp_register_script(
+				'swiper',
+				plugins_url( '/assets/js/vendors/swiper/8.4.5/swiper-bundle.min.js',
+				__FILE__ ),
+				array(),
+				'8.45',
+				true
+			);
+		}
+		
 		wp_enqueue_style( 'ops-swiper', plugins_url( '/assets/vendors/swiper/swiper-bundle.min.css', __FILE__ ) );
 
 		// Load main stylesheet
