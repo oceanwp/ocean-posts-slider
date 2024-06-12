@@ -215,6 +215,7 @@ final class Ocean_Posts_Slider {
 			require_once $this->plugin_path . '/includes/helpers.php';
 			require_once $this->plugin_path . '/includes/posts-slider.php';
 			add_action( 'wp_enqueue_scripts', array( $this, 'ops_scripts' ), 999 );
+			add_action( 'elementor/frontend/after_register_scripts', array( self::instance(), 'ops_scripts' ), 999 );
 			add_action( 'admin_enqueue_scripts', array( $this, 'metabox_scripts' ) );
 			if ( current_user_can( $capabilities ) ) {
 				add_action( 'butterbean_register', array( $this, 'metabox' ), 10, 2 );
@@ -228,62 +229,60 @@ final class Ocean_Posts_Slider {
 	}
 
 	/**
-     * Check if the current page requires Swiper.
-     *
-     * @since 2.0.8
-     * @return bool
-     */
-    public function is_swiper_required() {
-        // Check specific conditions where Swiper is needed.
-        // Example: Check if the current post type is 'ocean_posts_slider' or a specific shortcode is used.
-        if ( is_singular('ocean_posts_slider') || has_shortcode(get_post()->post_content, 'ocean_posts_slider') ) {
-            return true;
-        }
-        return false;
-    }
+	 * Check if the current page requires Swiper.
+	 *
+	 * @since 2.0.8
+	 * @return bool
+	 */
+	public function is_swiper_required() {
+		// Check specific conditions where Swiper is needed.
+		// Example: Check if the current post type is 'ocean_posts_slider' or a specific shortcode is used.
+		if ( is_singular( 'ocean_posts_slider' ) || has_shortcode( get_post()->post_content, 'ocean_posts_slider' ) ) {
+			return true;
+		}
+		return false;
+	}
 
 	/**
 	 * Enqueue scripts
 	 *
 	 * @since  1.0.0
 	 */
+
 	public function ops_scripts() {
-
-		if ( !$this->is_swiper_required() ) {
-            return;
-        }
-
 		// Load vendors scripts.
-
-		// Register the 'swiper' script only if the feature is active.
 		if ( Plugin::$instance->experiments->is_feature_active( 'e_swiper_latest' ) ) {
 			// Deregister the existing Swiper script if already registered.
-			if ( class_exists('Ocean_Elementor_Widgets') ) { 
-				if (wp_script_is('swiper', 'registered')) {
-					wp_deregister_script('swiper');
+			if ( class_exists( 'Ocean_Elementor_Widgets' ) ) {
+				if ( wp_script_is( 'swiper', 'registered' ) ) {
+					wp_deregister_script( 'swiper' );
 				}
 			}
 
-			wp_enqueue_script( 
-				'swiper', 
-				plugins_url( '/assets/vendors/swiper/6.7.1/swiper-bundle.min.js',
-				__FILE__ ), 
-				array(), 
-				'6.7.1', 
-				true 
+			wp_enqueue_script(
+				'swiper',
+				plugins_url(
+					'/assets/vendors/swiper/6.7.1/swiper-bundle.min.js',
+					__FILE__
+				),
+				array(),
+				'6.7.1',
+				true
 			);
 
 		} else {
 			wp_register_script(
 				'swiper',
-				plugins_url( '/assets/js/vendors/swiper/8.4.5/swiper-bundle.min.js',
-				__FILE__ ),
+				plugins_url(
+					'/assets/js/vendors/swiper/8.4.5/swiper-bundle.min.js',
+					__FILE__
+				),
 				array(),
 				'8.45',
 				true
 			);
 		}
-		
+
 		wp_enqueue_style( 'ops-swiper', plugins_url( '/assets/vendors/swiper/swiper-bundle.min.css', __FILE__ ) );
 
 		// Load main stylesheet
@@ -291,6 +290,8 @@ final class Ocean_Posts_Slider {
 		// Load custom js methods.
 		wp_enqueue_script( 'ops-js-scripts', plugins_url( '/assets/js/posts-slider.min.js', __FILE__ ), array( 'oceanwp-main', 'swiper' ), null, true );
 	}
+
+
 
 	/**
 	 * Register custom post type
@@ -372,7 +373,6 @@ final class Ocean_Posts_Slider {
 
 		// Enqueue scripts
 		wp_enqueue_script( 'oceanwp-ps-metabox-script', plugins_url( '/assets/js/metabox.min.js', __FILE__ ), array( 'jquery' ), $this->version, true );
-
 	}
 
 	/**
@@ -727,7 +727,6 @@ final class Ocean_Posts_Slider {
 				'default'           => 'date',
 			)
 		);
-
 	}
 
 	/**
@@ -801,7 +800,6 @@ final class Ocean_Posts_Slider {
 			return $image_sizes;
 
 		}
-
 	}
 
 	/**
@@ -819,7 +817,6 @@ final class Ocean_Posts_Slider {
 			'side',
 			'low'
 		);
-
 	}
 
 	/**
@@ -827,7 +824,8 @@ final class Ocean_Posts_Slider {
 	 *
 	 * @since  1.0.0
 	 */
-	public function display_meta_box( $post ) { ?>
+	public function display_meta_box( $post ) {
+		?>
 
 		<input type="text" class="widefat" value='[ocean_posts_slider id="<?php echo $post->ID; ?>"]' readonly />
 
@@ -844,7 +842,6 @@ final class Ocean_Posts_Slider {
 		$texts[] = '.oceanwp-post-list.one .oceanwp-post-category:hover,.oceanwp-post-list.one .oceanwp-post-category:hover a,.oceanwp-post-list.two .slick-arrow:hover,.oceanwp-post-list.two article:hover .oceanwp-post-category,.oceanwp-post-list.two article:hover .oceanwp-post-category a';
 
 		return $texts;
-
 	}
 
 	/**
@@ -857,7 +854,6 @@ final class Ocean_Posts_Slider {
 		$backgrounds[] = '.oceanwp-post-list.one .readmore:hover,.oceanwp-post-list.one .oceanwp-post-category,.oceanwp-post-list.two .oceanwp-post-category,.oceanwp-post-list.two article:hover .slide-overlay-wrap';
 
 		return $backgrounds;
-
 	}
 
 	/**
@@ -870,9 +866,7 @@ final class Ocean_Posts_Slider {
 		$borders[] = '.oceanwp-post-list.one .readmore:hover';
 
 		return $borders;
-
 	}
-
 } // End Class
 
 // --------------------------------------------------------------------------------
@@ -909,8 +903,7 @@ if ( ! function_exists( 'ocean_posts_slider_fs' ) ) {
 	if ( 0 == did_action( 'owp_fs_loaded' ) ) {
 		// Init add-on only after parent theme was loaded.
 		add_action( 'owp_fs_loaded', 'ocean_posts_slider_fs_addon_init', 15 );
-	} else {
-		if ( class_exists( 'Ocean_Extra' ) ) {
+	} elseif ( class_exists( 'Ocean_Extra' ) ) {
 			/**
 			 * This makes sure that if the theme was already loaded
 			 * before the plugin, it will run Freemius right away.
@@ -918,7 +911,6 @@ if ( ! function_exists( 'ocean_posts_slider_fs' ) ) {
 			 * This is crucial for the plugin's activation hook.
 			 */
 			ocean_posts_slider_fs_addon_init();
-		}
 	}
 }
 
