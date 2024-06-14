@@ -25,7 +25,7 @@ class OW_PostsSlider extends OW_Base {
             console.log("Elementor editor detected, using delay");
             setTimeout(() => {
                 this.detectAndInitSliders();
-            }, 1000); // Delay to ensure DOM is fully loaded in the editor
+            }, 2500); // Delay to ensure DOM is fully loaded in the editor
         } else {
             this.detectAndInitSliders();
         }
