@@ -249,47 +249,55 @@ final class Ocean_Posts_Slider {
 	 * @since  1.0.0
 	 */
 
-	public function ops_scripts() {
-		// Load vendors scripts.
-		if ( Plugin::$instance->experiments->is_feature_active( 'e_swiper_latest' ) ) {
-			// Deregister the existing Swiper script if already registered.
-			if ( class_exists( 'Ocean_Elementor_Widgets' ) ) {
-				if ( wp_script_is( 'swiper', 'registered' ) ) {
-					wp_deregister_script( 'swiper' );
+	 public function ops_scripts() {
+		// Check if Elementor is active.
+		if ( class_exists( 'Elementor\Plugin' ) ) {
+			// Load vendors scripts.
+			if ( \Elementor\Plugin::$instance->experiments->is_feature_active( 'e_swiper_latest' ) ) {
+				// Deregister the existing Swiper script if already registered.
+				if ( class_exists( 'Ocean_Elementor_Widgets' ) ) {
+					if ( wp_script_is( 'swiper', 'registered' ) ) {
+						wp_deregister_script( 'swiper' );
+					}
 				}
+	
+				wp_enqueue_script(
+					'swiper',
+					plugins_url(
+						'/assets/vendors/swiper/6.7.1/swiper-bundle.min.js',
+						__FILE__
+					),
+					array(),
+					'6.7.1',
+					true
+				);
+	
+			} else {
+				wp_register_script(
+					'swiper',
+					plugins_url(
+						'/assets/js/vendors/swiper/8.4.5/swiper-bundle.min.js',
+						__FILE__
+					),
+					array(),
+					'8.4.5',
+					true
+				);
 			}
-
-			wp_enqueue_script(
-				'swiper',
-				plugins_url(
-					'/assets/vendors/swiper/6.7.1/swiper-bundle.min.js',
-					__FILE__
-				),
-				array(),
-				'6.7.1',
-				true
-			);
-
+	
 		} else {
-			wp_register_script(
-				'swiper',
-				plugins_url(
-					'/assets/js/vendors/swiper/8.4.5/swiper-bundle.min.js',
-					__FILE__
-				),
-				array(),
-				'8.45',
-				true
-			);
+			wp_enqueue_script( 'swiper', plugins_url( '/assets/vendors/swiper/swiper-bundle.min.js', __FILE__ ), array(), '6.7.1', true );
 		}
-
+		
 		wp_enqueue_style( 'ops-swiper', plugins_url( '/assets/vendors/swiper/swiper-bundle.min.css', __FILE__ ) );
 
 		// Load main stylesheet
 		wp_enqueue_style( 'ops-styles', plugins_url( '/assets/css/style.min.css', __FILE__ ) );
+
 		// Load custom js methods.
 		wp_enqueue_script( 'ops-js-scripts', plugins_url( '/assets/js/posts-slider.min.js', __FILE__ ), array( 'oceanwp-main', 'swiper' ), null, true );
 	}
+	
 
 
 
