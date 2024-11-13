@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.0.8 - NOV 13 2024 =
+- Fixed: Compatibility: Elementor: Swiper Library influencing the functionality of the slider by displaying one and the same posts.
+
 = 2.0.7 - MAY 20 2024 =
 - Updated: Compatibility: WordPress version number.
 

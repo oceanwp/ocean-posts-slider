@@ -20,7 +20,22 @@ class OW_PostsSlider extends OW_Base {
     onInit() {
         super.onInit();
 
-        if (this.hasPostsSlider()) {
+        // Detect if in Elementor editor mode
+        if (typeof elementorFrontend !== 'undefined' && elementorFrontend.isEditMode()) {
+            console.log("Elementor editor detected, using delay");
+            setTimeout(() => {
+                this.detectAndInitSliders();
+            }, 2500); // Delay to ensure DOM is fully loaded in the editor
+        } else {
+            this.detectAndInitSliders();
+        }
+    }
+
+    detectAndInitSliders() {
+        this.elements = this.getDefaultElements(); // Refresh elements
+        const hasSlider = this.hasPostsSlider();
+
+        if (hasSlider) {
             this.initSwiper();
         }
     }
@@ -162,4 +177,17 @@ class OW_PostsSlider extends OW_Base {
 }
 
 ("use script");
-new OW_PostsSlider();
+function initializeOWPostsSlider() {
+    new OW_PostsSlider();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    initializeOWPostsSlider();
+
+    if (typeof elementor !== 'undefined') {
+        elementor.hooks.addAction('frontend/element_ready/global', function () {
+            initializeOWPostsSlider();
+        });
+    }
+});
+
