@@ -260,34 +260,20 @@ final class Ocean_Posts_Slider {
 						wp_deregister_script( 'swiper' );
 					}
 				}
-
-				wp_register_script(
-					'swiper',
-					plugins_url(
-						'/assets/js/vendors/swiper/8.4.5/swiper-bundle.min.js',
-						__FILE__
-					),
-					array(),
-					'8.4.5',
-					true
-				);
-			} else {
-				wp_enqueue_script(
-					'swiper',
-					plugins_url(
-						'/assets/vendors/swiper/6.7.1/swiper-bundle.min.js',
-						__FILE__
-					),
-					array(),
-					'6.7.1',
-					true
-				);
 			}
-	
-		} else {
-			wp_enqueue_script( 'swiper', plugins_url( '/assets/vendors/swiper/swiper-bundle.min.js', __FILE__ ), array(), '6.7.1', true );
 		}
-		
+
+		wp_enqueue_script(
+			'swiper',
+			plugins_url(
+				'/assets/vendors/swiper/8.4.5/swiper-bundle.min.js',
+				__FILE__
+			),
+			array(),
+			'8.4.5',
+			true
+		);
+
 		wp_enqueue_style( 'ops-swiper', plugins_url( '/assets/vendors/swiper/swiper-bundle.min.css', __FILE__ ) );
 
 		// Load main stylesheet
@@ -296,9 +282,6 @@ final class Ocean_Posts_Slider {
 		// Load custom js methods.
 		wp_enqueue_script( 'ops-js-scripts', plugins_url( '/assets/js/posts-slider.min.js', __FILE__ ), array( 'oceanwp-main', 'swiper' ), null, true );
 	}
-	
-
-
 
 	/**
 	 * Register custom post type

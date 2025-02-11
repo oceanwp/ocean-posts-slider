@@ -50,7 +50,7 @@ class OW_PostsSlider extends OW_Base {
                 autoplay: {
                     delay: Number.parseInt(postsList.dataset.slideshow),
                 },
-                loop: true,
+                loop: false,
                 loopFillGroupWithBlank: true,
                 preloadImages: true,
                 breakpoints: {
