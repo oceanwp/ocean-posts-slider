@@ -50,7 +50,7 @@ class OW_PostsSlider extends OW_Base {
                 autoplay: {
                     delay: Number.parseInt(postsList.dataset.slideshow),
                 },
-                loop: false,
+                loop: true,
                 loopFillGroupWithBlank: true,
                 preloadImages: true,
                 breakpoints: {
@@ -63,8 +63,8 @@ class OW_PostsSlider extends OW_Base {
                         slidesPerGroup: typeTwo ? 2 : 1,
                     },
                     1200: {
-                        slidesPerView: typeTwo ? postsList.dataset.number : 1,
-                        slidesPerGroup: typeTwo ? postsList.dataset.number : 1,
+                        slidesPerView: typeTwo ? Number(postsList.dataset.number) : 1,
+                        slidesPerGroup: typeTwo ? Number(postsList.dataset.number) : 1,
                     },
                 },
 
