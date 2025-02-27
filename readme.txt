@@ -3,7 +3,7 @@ Contributors: oceanwp, apprimit, wpfleek
 Tags: slider, posts slider, oceanwp
 Requires at least: 5.6
 Tested up to: 6.7
-Stable tag: 2.0.8
+Stable tag: 2.0.9
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,6 +32,10 @@ This plugin will only work with the [OceanWP](https://oceanwp.org/) theme.
 3. Three Images Style.
 
 == Changelog ==
+
+= 2.0.9 - FEB 27 2025 =
+- Updated: Swiper from 6.7.1 to 8.4.5
+- Fixed: Elementor image carousel conflict by upgrading Swiper to the latest compatible version.
 
 = 2.0.8 - NOV 13 2024 =
 - Fixed: Compatibility: Elementor: Swiper Library influencing the functionality of the slider by displaying one and the same posts.

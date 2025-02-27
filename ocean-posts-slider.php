@@ -3,7 +3,7 @@
  * Plugin Name:         Ocean Posts Slider
  * Plugin URI:          https://oceanwp.org/extension/ocean-posts-slider/
  * Description:         Display your latest posts in a beautiful slider with different options.
- * Version:             2.0.8
+ * Version:             2.0.9
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
@@ -249,7 +249,7 @@ final class Ocean_Posts_Slider {
 	 * @since  1.0.0
 	 */
 
-	 public function ops_scripts() {
+		public function ops_scripts() {
 		// Check if Elementor is active.
 		if ( class_exists( 'Elementor\Plugin' ) ) {
 			// Load vendors scripts.
@@ -260,35 +260,20 @@ final class Ocean_Posts_Slider {
 						wp_deregister_script( 'swiper' );
 					}
 				}
-	
-				wp_enqueue_script(
-					'swiper',
-					plugins_url(
-						'/assets/vendors/swiper/6.7.1/swiper-bundle.min.js',
-						__FILE__
-					),
-					array(),
-					'6.7.1',
-					true
-				);
-	
-			} else {
-				wp_register_script(
-					'swiper',
-					plugins_url(
-						'/assets/js/vendors/swiper/8.4.5/swiper-bundle.min.js',
-						__FILE__
-					),
-					array(),
-					'8.4.5',
-					true
-				);
 			}
-	
-		} else {
-			wp_enqueue_script( 'swiper', plugins_url( '/assets/vendors/swiper/swiper-bundle.min.js', __FILE__ ), array(), '6.7.1', true );
 		}
-		
+
+		wp_enqueue_script(
+			'swiper',
+			plugins_url(
+				'/assets/vendors/swiper/8.4.5/swiper-bundle.min.js',
+				__FILE__
+			),
+			array(),
+			'8.4.5',
+			true
+		);
+
 		wp_enqueue_style( 'ops-swiper', plugins_url( '/assets/vendors/swiper/swiper-bundle.min.css', __FILE__ ) );
 
 		// Load main stylesheet
@@ -297,9 +282,6 @@ final class Ocean_Posts_Slider {
 		// Load custom js methods.
 		wp_enqueue_script( 'ops-js-scripts', plugins_url( '/assets/js/posts-slider.min.js', __FILE__ ), array( 'oceanwp-main', 'swiper' ), null, true );
 	}
-	
-
-
 
 	/**
 	 * Register custom post type
