@@ -33,8 +33,9 @@ This plugin will only work with the [OceanWP](https://oceanwp.org/) theme.
 
 == Changelog ==
 
-= 2.0.9 - FEB 26 2025 =
-- Fixed: Conflict with Elementor image carousel while using latest swiper.
+= 2.0.9 - FEB 27 2025 =
+- Updated: Swiper from 6.7.1 to 8.4.5
+- Fixed: Elementor image carousel conflict by upgrading Swiper to the latest compatible version.
 
 = 2.0.8 - NOV 13 2024 =
 - Fixed: Compatibility: Elementor: Swiper Library influencing the functionality of the slider by displaying one and the same posts.
