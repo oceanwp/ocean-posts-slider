@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.1.0 - MAY 20 2026 =
+- Updated: Compatibility: WordPress version number.
+
 = 2.0.9 - FEB 27 2025 =
 - Updated: Swiper from 6.7.1 to 8.4.5
 - Fixed: Elementor image carousel conflict by upgrading Swiper to the latest compatible version.

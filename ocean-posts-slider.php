@@ -3,11 +3,11 @@
  * Plugin Name:         Ocean Posts Slider
  * Plugin URI:          https://oceanwp.org/extension/ocean-posts-slider/
  * Description:         Display your latest posts in a beautiful slider with different options.
- * Version:             2.0.9
+ * Version:             2.1.0
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
- * Tested up to:        6.7
+ * Tested up to:        7.0
  *
  * Text Domain: ocean-posts-slider
  * Domain Path: /languages
