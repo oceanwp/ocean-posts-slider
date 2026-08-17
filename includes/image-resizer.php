@@ -22,6 +22,11 @@
  * @return str|array
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! class_exists( 'OPS_Resize' ) ) {
     class OPS_Exception extends Exception {}
 
@@ -178,7 +183,9 @@ if ( ! class_exists( 'OPS_Resize' ) ) {
                 return $image;
             }
             catch (OPS_Exception $ex) {
-                error_log('OPS_Resize.process() error: ' . $ex->getMessage());
+                if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+                    error_log( 'OPS_Resize.process() error: ' . $ex->getMessage() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+                }
 
                 if ($this->throwOnError) {
                     // Bubble up exception.
