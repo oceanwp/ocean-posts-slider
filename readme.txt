@@ -33,6 +33,11 @@ This plugin will only work with the [OceanWP](https://oceanwp.org/) theme.
 
 == Changelog ==
 
+= 2.1.1 - AUG 18 2026 =
+- Added: Compatibility: WordPress 7.1.
+- Improved: Image Resize: Logic to print error message inside the error log only when WP_DEBUG enabled.
+- Improved: Shortcode: Logic for handling empty categories.
+
 = 2.1.0 - MAY 20 2026 =
 - Updated: Compatibility: WordPress version number.
 
