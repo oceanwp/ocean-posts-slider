@@ -3,6 +3,11 @@
  * Posts Slider Shortcode
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! class_exists( 'OceanWP_Posts_Slider_Shortcode' ) ) {
 
 	class OceanWP_Posts_Slider_Shortcode {
@@ -87,15 +92,24 @@ if ( ! class_exists( 'OceanWP_Posts_Slider_Shortcode' ) ) {
 			);
 
 			/* Query for limit by category */
-			if ( $limit == true ) {
+			if ( true === $limit ) {
 				$only_post         = array();
 				$cat_ID_list       = array();
 				$only_post_ordered = array();
-				$categories        = get_terms( 'category', array( 'hide_empty' => 1 ) );
+				$categories        = get_terms(
+					array(
+						'taxonomy'   => 'category',
+						'hide_empty' => true,
+					)
+				);
+
+				if ( is_wp_error( $categories ) ) {
+					$categories = array();
+				}
 
 				// get all categories term_id
 				foreach ( $categories as $category ) {
-					array_push( $cat_ID_list, $category->term_id );
+					$cat_ID_list[] = absint( $category->term_id );
 				}
 
 				// get last post of each categories

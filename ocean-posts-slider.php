@@ -3,11 +3,13 @@
  * Plugin Name:         Ocean Posts Slider
  * Plugin URI:          https://oceanwp.org/extension/ocean-posts-slider/
  * Description:         Display your latest posts in a beautiful slider with different options.
- * Version:             2.1.0
+ * Version:             2.1.1
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
- * Requires at least:   5.6
- * Tested up to:        7.0
+ * Requires at least:   6.8
+ * Tested up to:        7.1
+ * License:             GPLv2 or later
+ * License URI:         https://www.gnu.org/licenses/gpl-2.0.html
  *
  * Text Domain: ocean-posts-slider
  * Domain Path: /languages
@@ -123,7 +125,6 @@ final class Ocean_Posts_Slider {
 		register_activation_hook( __FILE__, array( $this, 'install' ) );
 
 		add_action( 'init', array( $this, 'ops_load_plugin_textdomain' ) );
-
 		add_action( 'init', array( $this, 'ops_setup' ) );
 
 		add_action( 'init', array( $this, 'register_post_type' ), 0 );
@@ -163,7 +164,7 @@ final class Ocean_Posts_Slider {
 	 * @since 1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'ocean-posts-slider' ), '1.0.0' );
 	}
 
 	/**
@@ -172,7 +173,7 @@ final class Ocean_Posts_Slider {
 	 * @since 1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'ocean-posts-slider' ), '1.0.0' );
 	}
 
 	/**
