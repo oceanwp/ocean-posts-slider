@@ -236,3 +236,39 @@
 .oceanwp-post-list.two article:hover .oceanwp-post-excerpt {
   max-height: 250px;
 }
+
+/* Metadata is visible between the title and expandable excerpt in Three Images. */
+.oceanwp-post-list.two .oceanwp-post-date {
+  margin: 0 0 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.oceanwp-post-list.two .oceanwp-post-date a {
+  color: inherit;
+}
+
+/* Reveal the same content for keyboard users as for mouse users. */
+.oceanwp-post-list.two article:focus-within .oceanwp-post-excerpt {
+  max-height: 250px;
+}
+.oceanwp-post-list.two article:focus-within .slide-overlay-wrap {
+  background-color: #13aff0;
+}
+
+/* Optional metadata styling applies only when a valid setting was saved. */
+.oceanwp-post-list.ops-meta-has-color .oceanwp-post-date,
+.oceanwp-post-list.ops-meta-has-color .oceanwp-post-date a {
+  color: var(--ops-meta-color);
+}
+.oceanwp-post-list.ops-meta-has-size .oceanwp-post-date {
+  font-size: var(--ops-meta-font-size);
+}
+.oceanwp-post-list.ops-meta-has-spacing .oceanwp-post-date {
+  margin-bottom: var(--ops-meta-spacing);
+}
+.oceanwp-post-list .oceanwp-post-date a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}

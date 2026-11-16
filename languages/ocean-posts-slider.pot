@@ -304,3 +304,55 @@ msgstr ""
 #: ocean-posts-slider.php:805
 msgid "Shortcode"
 msgstr ""
+
+#: ocean-posts-slider.php:618
+msgid "Meta"
+msgstr ""
+
+#: ocean-posts-slider.php:619
+msgid "Choose which post details to display. Defaults: Date & Author for One Image; None for Three Images."
+msgstr ""
+
+#: ocean-posts-slider.php:621
+msgid "Display Date & Author"
+msgstr ""
+
+#: ocean-posts-slider.php:622
+msgid "Display Date Only"
+msgstr ""
+
+#: ocean-posts-slider.php:623
+msgid "Display Author Only"
+msgstr ""
+
+#: ocean-posts-slider.php:624
+msgid "Display None"
+msgstr ""
+
+#: includes/posts-slider.php:322
+msgid "by"
+msgstr ""
+
+#: ocean-posts-slider.php:668
+msgid "Meta Text Color"
+msgstr ""
+
+#: ocean-posts-slider.php:669
+msgid "Optional HEX color, for example #ffffff. Leave blank to use the original styling."
+msgstr ""
+
+#: ocean-posts-slider.php:684
+msgid "Meta Font Size (px)"
+msgstr ""
+
+#: ocean-posts-slider.php:685
+msgid "Optional font size, from 8 to 48 pixels. Leave blank to preserve the existing font size."
+msgstr ""
+
+#: ocean-posts-slider.php:701
+msgid "Meta Bottom Spacing (px)"
+msgstr ""
+
+#: ocean-posts-slider.php:702
+msgid "Optional space beneath metadata, from 0 to 80 pixels. Leave blank for the original layout."
+msgstr ""

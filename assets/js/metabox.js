@@ -1,7 +1,7 @@
 ( function( $ ) {
 	"use strict";
 
-	$( document ).on( 'ready', function() {
+	$( function() {
 
 		// Show/hide style two options
 		var styleTwo          	= $( '#butterbean-control-oceanwp_ps_style select' ),
@@ -51,6 +51,22 @@
 				imageCustomSettings.hide();
 			}
 
+		} );
+
+		// Preserve saved metadata choices when changing styles. For sliders without
+		// a saved choice, the dropdown follows the selected layout's legacy default.
+		var metaSelect = $( '#butterbean-control-oceanwp_ps_meta_display select' );
+		var hasSavedMeta = typeof opsMetaAdmin !== 'undefined' && opsMetaAdmin.hasSavedChoice;
+		var metaChosenInEditor = false;
+
+		metaSelect.on( 'change', function () {
+			metaChosenInEditor = true;
+		} );
+
+		styleTwo.on( 'change', function () {
+			if ( ! hasSavedMeta && ! metaChosenInEditor ) {
+				metaSelect.val( styleTwo.val() === 'one' ? 'date_author' : 'none' );
+			}
 		} );
 
 	} );

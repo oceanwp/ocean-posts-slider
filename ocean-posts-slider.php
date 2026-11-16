@@ -3,7 +3,7 @@
  * Plugin Name:         Ocean Posts Slider
  * Plugin URI:          https://oceanwp.org/extension/ocean-posts-slider/
  * Description:         Display your latest posts in a beautiful slider with different options.
- * Version:             2.1.1
+ * Version:             2.1.2
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   6.8
@@ -338,6 +338,26 @@ final class Ocean_Posts_Slider {
 	}
 
 	/**
+	 * Find the slider currently being edited, even if metabox registration runs
+	 * before WordPress has populated the global post object.
+	 *
+	 * @return int Slider post ID, or zero for a new unsaved slider.
+	 */
+	private function editing_slider_id() {
+		global $post;
+		if ( is_object( $post ) && isset( $post->ID ) ) {
+			return absint( $post->ID );
+		}
+		if ( isset( $_GET['post'] ) && is_scalar( $_GET['post'] ) ) {
+			return absint( $_GET['post'] );
+		}
+		if ( isset( $_POST['post_ID'] ) && is_scalar( $_POST['post_ID'] ) ) {
+			return absint( $_POST['post_ID'] );
+		}
+		return 0;
+	}
+
+	/**
 	 * Load metabox scripts and styles
 	 *
 	 * @since 1.0.0
@@ -364,6 +384,11 @@ final class Ocean_Posts_Slider {
 
 		// Enqueue scripts
 		wp_enqueue_script( 'oceanwp-ps-metabox-script', plugins_url( '/assets/js/metabox.min.js', __FILE__ ), array( 'jquery' ), $this->version, true );
+		wp_localize_script(
+			'oceanwp-ps-metabox-script',
+			'opsMetaAdmin',
+			array( 'hasSavedChoice' => metadata_exists( 'post', $this->editing_slider_id(), 'oceanwp_ps_meta_display' ) )
+		);
 	}
 
 	/**
@@ -454,6 +479,7 @@ final class Ocean_Posts_Slider {
 			'oceanwp_ps_style', // Same as control name.
 			array(
 				'sanitize_callback' => 'sanitize_key',
+				'default'           => 'two', // Match the existing frontend fallback for unsaved sliders.
 			)
 		);
 
@@ -577,6 +603,37 @@ final class Ocean_Posts_Slider {
 			)
 		);
 
+		// Preserve each layout's original behavior for sliders without an explicit selection.
+		// One Image historically showed both fields; Three Images showed neither.
+		$slider_edit_id = $this->editing_slider_id();
+		$saved_style    = $slider_edit_id ? get_post_meta( $slider_edit_id, 'oceanwp_ps_style', true ) : '';
+		$default_meta   = 'one' === $saved_style ? 'date_author' : 'none';
+
+		// Metadata visibility is shared by all slider styles.
+		$manager->register_control(
+			'oceanwp_ps_meta_display',
+			array(
+				'section'     => 'oceanwp_ps_general',
+				'type'        => 'select',
+				'label'       => esc_html__( 'Meta', 'ocean-posts-slider' ),
+				'description' => esc_html__( 'Choose which post details to display. Defaults: Date & Author for One Image; None for Three Images.', 'ocean-posts-slider' ),
+				'choices'     => array(
+					'date_author' => esc_html__( 'Display Date & Author', 'ocean-posts-slider' ),
+					'date_only'   => esc_html__( 'Display Date Only', 'ocean-posts-slider' ),
+					'author_only' => esc_html__( 'Display Author Only', 'ocean-posts-slider' ),
+					'none'        => esc_html__( 'Display None', 'ocean-posts-slider' ),
+				),
+			)
+		);
+
+		$manager->register_setting(
+			'oceanwp_ps_meta_display',
+			array(
+				'sanitize_callback' => array( $this, 'sanitize_meta_display' ),
+				'default'           => $default_meta,
+			)
+		);
+
 		$manager->register_section(
 			'oceanwp_ps_slide',
 			array(
@@ -599,6 +656,57 @@ final class Ocean_Posts_Slider {
 			'oceanwp_ps_margin', // Same as control name.
 			array(
 				'sanitize_callback' => 'sanitize_text_field',
+			)
+		);
+
+		// Optional styling for metadata in both layouts. Blank values retain the CSS defaults.
+		$manager->register_control(
+			'oceanwp_ps_meta_color',
+			array(
+				'section'     => 'oceanwp_ps_slide',
+				'type'        => 'text',
+				'label'       => esc_html__( 'Meta Text Color', 'ocean-posts-slider' ),
+				'description' => esc_html__( 'Optional HEX color, for example #ffffff. Leave blank to use the original styling.', 'ocean-posts-slider' ),
+			)
+		);
+		$manager->register_setting(
+			'oceanwp_ps_meta_color',
+			array(
+				'sanitize_callback' => array( $this, 'sanitize_meta_color' ),
+			)
+		);
+
+		$manager->register_control(
+			'oceanwp_ps_meta_font_size',
+			array(
+				'section'     => 'oceanwp_ps_slide',
+				'type'        => 'number',
+				'label'       => esc_html__( 'Meta Font Size (px)', 'ocean-posts-slider' ),
+				'description' => esc_html__( 'Optional font size, from 8 to 48 pixels. Leave blank to preserve the existing font size.', 'ocean-posts-slider' ),
+				'attr'        => array( 'min' => '8', 'max' => '48', 'step' => '1' ),
+			)
+		);
+		$manager->register_setting(
+			'oceanwp_ps_meta_font_size',
+			array(
+				'sanitize_callback' => array( $this, 'sanitize_meta_font_size' ),
+			)
+		);
+
+		$manager->register_control(
+			'oceanwp_ps_meta_spacing',
+			array(
+				'section'     => 'oceanwp_ps_slide',
+				'type'        => 'number',
+				'label'       => esc_html__( 'Meta Bottom Spacing (px)', 'ocean-posts-slider' ),
+				'description' => esc_html__( 'Optional space beneath metadata, from 0 to 80 pixels. Leave blank for the original layout.', 'ocean-posts-slider' ),
+				'attr'        => array( 'min' => '0', 'max' => '80', 'step' => '1' ),
+			)
+		);
+		$manager->register_setting(
+			'oceanwp_ps_meta_spacing',
+			array(
+				'sanitize_callback' => array( $this, 'sanitize_meta_spacing' ),
 			)
 		);
 
@@ -718,6 +826,42 @@ final class Ocean_Posts_Slider {
 				'default'           => 'date',
 			)
 		);
+	}
+
+	/**
+	 * Validate the post metadata display choice.
+	 *
+	 * @since 2.1.2
+	 * @param mixed $value Selected metadata display setting.
+	 * @return string
+	 */
+	public function sanitize_meta_display( $value ) {
+		$allowed = array( 'date_author', 'date_only', 'author_only', 'none' );
+
+		// Empty/invalid values revert to the style-specific default at render time.
+		return is_string( $value ) && in_array( $value, $allowed, true ) ? $value : '';
+	}
+
+	/** Sanitize optional metadata color; empty means inherit original theme styling. */
+	public function sanitize_meta_color( $value ) {
+		return is_string( $value ) ? ( sanitize_hex_color( $value ) ?: '' ) : '';
+	}
+
+	/** Sanitize optional integer pixel values for metadata. */
+	private function sanitize_meta_number( $value, $min, $max ) {
+		if ( ! is_scalar( $value ) || ! preg_match( '/^\d+$/', (string) $value ) ) {
+			return '';
+		}
+		$number = (int) $value;
+		return $number >= $min && $number <= $max ? $number : '';
+	}
+
+	public function sanitize_meta_font_size( $value ) {
+		return $this->sanitize_meta_number( $value, 8, 48 );
+	}
+
+	public function sanitize_meta_spacing( $value ) {
+		return $this->sanitize_meta_number( $value, 0, 80 );
 	}
 
 	/**
