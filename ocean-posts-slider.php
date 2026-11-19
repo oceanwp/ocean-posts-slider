@@ -616,9 +616,9 @@ final class Ocean_Posts_Slider {
 				'section'     => 'oceanwp_ps_general',
 				'type'        => 'select',
 				'label'       => esc_html__( 'Meta', 'ocean-posts-slider' ),
-				'description' => esc_html__( 'Choose which post details to display. Defaults: Date & Author for One Image; None for Three Images.', 'ocean-posts-slider' ),
+				'description' => __( 'Choose which post details to display. Defaults: Date & Author for One Image; None for Three Images.', 'ocean-posts-slider' ),
 				'choices'     => array(
-					'date_author' => esc_html__( 'Display Date & Author', 'ocean-posts-slider' ),
+					'date_author' => __( 'Display Date & Author', 'ocean-posts-slider' ),
 					'date_only'   => esc_html__( 'Display Date Only', 'ocean-posts-slider' ),
 					'author_only' => esc_html__( 'Display Author Only', 'ocean-posts-slider' ),
 					'none'        => esc_html__( 'Display None', 'ocean-posts-slider' ),
