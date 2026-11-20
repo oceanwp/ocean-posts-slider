@@ -33,6 +33,15 @@ This plugin will only work with the [OceanWP](https://oceanwp.org/) theme.
 
 == Changelog ==
 
+= 2.1.2 - NOV 20 2026 =
+- NEW: Slider Style: Three Images: Support for displaying post date and author metadata.
+- NEW: Option: Post Meta: New display options for both slider styles, enabling users to display Date & Author, Date Only, Author Only, or None.
+- NEW: Post Meta: Styling: New controls for customizing metadata text color, font size, and bottom spacing.
+- Added: Compatibility: Preserved existing metadata display defaults and styling for both slider styles.
+- Improved: Post Queries: Refined automatic post selection and visibility filtering for consistent display results.
+- Improved: Post Meta: Enhanced HTML with accessible date markup. WordPress date formatting and author link attributes preserved.
+- Improved: Accessibility: Slider Style: Three Images: Enhanced keyboard navigation, focus visibility, and content accessibility.
+
 = 2.1.1 - AUG 18 2026 =
 - Added: Compatibility: WordPress 7.1.
 - Improved: Image Resize: Logic to print error message inside the error log only when WP_DEBUG enabled.
