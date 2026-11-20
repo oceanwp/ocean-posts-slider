@@ -2,46 +2,50 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Posts Slider 2.1.1\n"
+"Project-Id-Version: Ocean Posts Slider 2.1.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-posts-slider\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-18T10:18:53+00:00\n"
+"POT-Creation-Date: 2026-11-20T15:50:17+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ocean-posts-slider\n"
 
 #. Plugin Name of the plugin
-#: ocean-posts-slider.php:5
+#: ocean-posts-slider.php:3
 msgid "Ocean Posts Slider"
 msgstr ""
 
 #. Plugin URI of the plugin
-#: ocean-posts-slider.php:7
+#: ocean-posts-slider.php:4
 msgid "https://oceanwp.org/extension/ocean-posts-slider/"
 msgstr ""
 
 #. Description of the plugin
-#: ocean-posts-slider.php:9
+#: ocean-posts-slider.php:5
 msgid "Display your latest posts in a beautiful slider with different options."
 msgstr ""
 
 #. Author of the plugin
-#: ocean-posts-slider.php:13
+#: ocean-posts-slider.php:7
 msgid "OceanWP"
 msgstr ""
 
 #. Author URI of the plugin
-#: ocean-posts-slider.php:15
+#: ocean-posts-slider.php:8
 msgid "https://oceanwp.org/"
 msgstr ""
 
-#: includes/posts-slider.php:58
-#: ocean-posts-slider.php:576
+#: includes/posts-slider.php:62
+#: ocean-posts-slider.php:602
 msgid "Read More"
+msgstr ""
+
+#: includes/posts-slider.php:345
+msgid "by"
 msgstr ""
 
 #: ocean-posts-slider.php:167
@@ -86,221 +90,269 @@ msgstr ""
 msgid "No Items Found In Trash"
 msgstr ""
 
-#: ocean-posts-slider.php:384
+#: ocean-posts-slider.php:409
 msgid "Posts Slider Settings"
 msgstr ""
 
-#: ocean-posts-slider.php:396
+#: ocean-posts-slider.php:421
 msgid "General"
 msgstr ""
 
-#: ocean-posts-slider.php:406
-#: ocean-posts-slider.php:704
+#: ocean-posts-slider.php:431
+#: ocean-posts-slider.php:812
 msgid "Post Type"
 msgstr ""
 
-#: ocean-posts-slider.php:407
+#: ocean-posts-slider.php:432
 msgid "Select your post type to display in the slider."
 msgstr ""
 
-#: ocean-posts-slider.php:423
+#: ocean-posts-slider.php:448
 msgid "Limit by categories"
 msgstr ""
 
-#: ocean-posts-slider.php:424
+#: ocean-posts-slider.php:449
 msgid "Limit number of post by category."
 msgstr ""
 
-#: ocean-posts-slider.php:426
+#: ocean-posts-slider.php:451
 msgid "Only First post by categories"
 msgstr ""
 
-#: ocean-posts-slider.php:427
+#: ocean-posts-slider.php:452
 msgid "All post"
 msgstr ""
 
-#: ocean-posts-slider.php:444
+#: ocean-posts-slider.php:469
 msgid "Style"
 msgstr ""
 
-#: ocean-posts-slider.php:445
+#: ocean-posts-slider.php:470
 msgid "Select the slider style."
 msgstr ""
 
-#: ocean-posts-slider.php:447
+#: ocean-posts-slider.php:472
 msgid "One Image"
 msgstr ""
 
-#: ocean-posts-slider.php:448
+#: ocean-posts-slider.php:473
 msgid "Three Images"
 msgstr ""
 
-#: ocean-posts-slider.php:465
+#: ocean-posts-slider.php:491
 msgid "Number"
 msgstr ""
 
-#: ocean-posts-slider.php:466
+#: ocean-posts-slider.php:492
 msgid "Enter the number of posts to display."
 msgstr ""
 
-#: ocean-posts-slider.php:486
+#: ocean-posts-slider.php:512
 msgid "Number Per Slide"
 msgstr ""
 
-#: ocean-posts-slider.php:487
+#: ocean-posts-slider.php:513
 msgid "Enter the number of posts to display per slide."
 msgstr ""
 
-#: ocean-posts-slider.php:507
+#: ocean-posts-slider.php:533
 msgid "Size"
 msgstr ""
 
-#: ocean-posts-slider.php:508
+#: ocean-posts-slider.php:534
 msgid "Select the size of your images."
 msgstr ""
 
-#: ocean-posts-slider.php:525
+#: ocean-posts-slider.php:551
 msgid "Image Width"
 msgstr ""
 
-#: ocean-posts-slider.php:526
+#: ocean-posts-slider.php:552
 msgid "Enter your custom image width."
 msgstr ""
 
-#: ocean-posts-slider.php:546
+#: ocean-posts-slider.php:572
 msgid "Image Height"
 msgstr ""
 
-#: ocean-posts-slider.php:547
+#: ocean-posts-slider.php:573
 msgid "Enter your custom image height."
 msgstr ""
 
-#: ocean-posts-slider.php:567
+#: ocean-posts-slider.php:593
 msgid "Read More Text"
 msgstr ""
 
-#: ocean-posts-slider.php:568
+#: ocean-posts-slider.php:594
 msgid "Enter your custom text for the read more button."
 msgstr ""
 
-#: ocean-posts-slider.php:583
-msgid "Slide"
+#: ocean-posts-slider.php:618
+msgid "Meta"
 msgstr ""
 
-#: ocean-posts-slider.php:593
-msgid "Margin"
+#: ocean-posts-slider.php:619
+msgid "Choose which post details to display. Defaults: Date & Author for One Image; None for Three Images."
 msgstr ""
 
-#: ocean-posts-slider.php:594
-msgid "Add a space between the slider and your content. eg 0 0 20px 0 (top right bottom left)."
+#: ocean-posts-slider.php:621
+msgid "Display Date & Author"
 msgstr ""
 
-#: ocean-posts-slider.php:610
-msgid "Speed"
+#: ocean-posts-slider.php:622
+msgid "Display Date Only"
 msgstr ""
 
-#: ocean-posts-slider.php:611
-msgid "Enter the transition speed of the slides."
+#: ocean-posts-slider.php:623
+msgid "Display Author Only"
 msgstr ""
 
-#: ocean-posts-slider.php:630
-msgid "Posts"
+#: ocean-posts-slider.php:624
+msgid "Display None"
 msgstr ""
 
 #: ocean-posts-slider.php:640
-msgid "Include Cat"
+msgid "Slide"
 msgstr ""
 
-#: ocean-posts-slider.php:641
-msgid "Enter the slug of your category to include, separate cat by commas."
+#: ocean-posts-slider.php:650
+msgid "Margin"
 msgstr ""
 
-#: ocean-posts-slider.php:657
-msgid "Exclude Cat"
+#: ocean-posts-slider.php:651
+msgid "Add a space between the slider and your content. eg 0 0 20px 0 (top right bottom left)."
 msgstr ""
 
-#: ocean-posts-slider.php:658
-msgid "Enter the slug of your category to exclude, separate cat by commas."
+#: ocean-posts-slider.php:668
+msgid "Meta Text Color"
 msgstr ""
 
-#: ocean-posts-slider.php:674
-msgid "Order"
+#: ocean-posts-slider.php:669
+msgid "Optional HEX color, for example #ffffff. Leave blank to use the original styling."
 msgstr ""
 
-#: ocean-posts-slider.php:675
-msgid "Designates the ascending or descending order."
+#: ocean-posts-slider.php:684
+msgid "Meta Font Size (px)"
 msgstr ""
 
-#: ocean-posts-slider.php:677
-msgid "Ascending Order"
-msgstr ""
-
-#: ocean-posts-slider.php:678
-msgid "Descending Order"
-msgstr ""
-
-#: ocean-posts-slider.php:696
-msgid "Order By"
-msgstr ""
-
-#: ocean-posts-slider.php:697
-msgid "Sort retrieved posts by parameter."
-msgstr ""
-
-#: ocean-posts-slider.php:699
-msgid "No Order"
-msgstr ""
-
-#: ocean-posts-slider.php:700
-msgid "ID"
+#: ocean-posts-slider.php:685
+msgid "Optional font size, from 8 to 48 pixels. Leave blank to preserve the existing font size."
 msgstr ""
 
 #: ocean-posts-slider.php:701
-msgid "Author"
+msgid "Meta Bottom Spacing (px)"
 msgstr ""
 
 #: ocean-posts-slider.php:702
+msgid "Optional space beneath metadata, from 0 to 80 pixels. Leave blank for the original layout."
+msgstr ""
+
+#: ocean-posts-slider.php:718
+msgid "Speed"
+msgstr ""
+
+#: ocean-posts-slider.php:719
+msgid "Enter the transition speed of the slides."
+msgstr ""
+
+#: ocean-posts-slider.php:738
+msgid "Posts"
+msgstr ""
+
+#: ocean-posts-slider.php:748
+msgid "Include Cat"
+msgstr ""
+
+#: ocean-posts-slider.php:749
+msgid "Enter the slug of your category to include, separate cat by commas."
+msgstr ""
+
+#: ocean-posts-slider.php:765
+msgid "Exclude Cat"
+msgstr ""
+
+#: ocean-posts-slider.php:766
+msgid "Enter the slug of your category to exclude, separate cat by commas."
+msgstr ""
+
+#: ocean-posts-slider.php:782
+msgid "Order"
+msgstr ""
+
+#: ocean-posts-slider.php:783
+msgid "Designates the ascending or descending order."
+msgstr ""
+
+#: ocean-posts-slider.php:785
+msgid "Ascending Order"
+msgstr ""
+
+#: ocean-posts-slider.php:786
+msgid "Descending Order"
+msgstr ""
+
+#: ocean-posts-slider.php:804
+msgid "Order By"
+msgstr ""
+
+#: ocean-posts-slider.php:805
+msgid "Sort retrieved posts by parameter."
+msgstr ""
+
+#: ocean-posts-slider.php:807
+msgid "No Order"
+msgstr ""
+
+#: ocean-posts-slider.php:808
+msgid "ID"
+msgstr ""
+
+#: ocean-posts-slider.php:809
+msgid "Author"
+msgstr ""
+
+#: ocean-posts-slider.php:810
 msgid "Title"
 msgstr ""
 
-#: ocean-posts-slider.php:703
+#: ocean-posts-slider.php:811
 msgid "Slug"
 msgstr ""
 
-#: ocean-posts-slider.php:705
+#: ocean-posts-slider.php:813
 msgid "Date"
 msgstr ""
 
-#: ocean-posts-slider.php:706
+#: ocean-posts-slider.php:814
 msgid "Modified"
 msgstr ""
 
-#: ocean-posts-slider.php:707
+#: ocean-posts-slider.php:815
 msgid "Parent"
 msgstr ""
 
-#: ocean-posts-slider.php:708
+#: ocean-posts-slider.php:816
 msgid "Random"
 msgstr ""
 
-#: ocean-posts-slider.php:709
+#: ocean-posts-slider.php:817
 msgid "Comment Count"
 msgstr ""
 
-#: ocean-posts-slider.php:741
+#: ocean-posts-slider.php:885
 msgid "Post"
 msgstr ""
 
-#: ocean-posts-slider.php:788
+#: ocean-posts-slider.php:932
 msgctxt "Image Size Control"
 msgid "Full"
 msgstr ""
 
-#: ocean-posts-slider.php:789
+#: ocean-posts-slider.php:933
 msgctxt "Image Size Control"
 msgid "Custom"
 msgstr ""
 
-#: ocean-posts-slider.php:805
+#: ocean-posts-slider.php:949
 msgid "Shortcode"
 msgstr ""

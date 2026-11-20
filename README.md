@@ -1,9 +1,9 @@
 # Ocean Posts Slider [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-**Contributors:** Nick
+**Contributors:** benjaminprojas, cristianrossi
 **Requires at least:** WordPress 5.6
 **Tested up to:** WordPress 7.1
-**Stable tag:** 2.1.1
+**Stable tag:** 2.1.2
 **License:** GPLv2 or later
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 

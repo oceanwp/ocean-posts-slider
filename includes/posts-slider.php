@@ -54,6 +54,10 @@ if ( ! class_exists( 'OceanWP_Posts_Slider_Shortcode' ) ) {
 			$order        = $order ? $order : 'DESC';
 			$orderby      = get_post_meta( $id, 'oceanwp_ps_orderby', true );
 			$orderby      = $orderby ? $orderby : 'date';
+			$meta_display = get_post_meta( $id, 'oceanwp_ps_meta_display', true );
+			if ( ! in_array( $meta_display, array( 'date_author', 'date_only', 'author_only', 'none' ), true ) ) {
+				$meta_display = 'one' === $style ? 'date_author' : 'none';
+			}
 			$more_text    = get_post_meta( $id, 'oceanwp_ps_more_text', true );
 			$more_text    = $more_text ? $more_text : esc_html__( 'Read More', 'ocean-posts-slider' );
 			$limit        = get_post_meta( $id, 'oceanwp_ps_limit', true );
@@ -70,8 +74,28 @@ if ( ! class_exists( 'OceanWP_Posts_Slider_Shortcode' ) ) {
 			}
 			$classes = implode( ' ', $classes );
 
-			// If has margin
-			$add_style = '';
+			// Optional CSS custom properties are scoped to this slider instance.
+			// Invalid or unset values cannot reach the HTML style attribute.
+			$meta_css_vars = array();
+			$meta_color = get_post_meta( $id, 'oceanwp_ps_meta_color', true );
+			$meta_color = is_string( $meta_color ) ? sanitize_hex_color( $meta_color ) : '';
+			if ( $meta_color ) {
+				$meta_css_vars[] = '--ops-meta-color:' . $meta_color;
+				$classes .= ' ops-meta-has-color';
+			}
+
+			$meta_size = get_post_meta( $id, 'oceanwp_ps_meta_font_size', true );
+			if ( is_scalar( $meta_size ) && preg_match( '/^\d+$/', (string) $meta_size ) && (int) $meta_size >= 8 && (int) $meta_size <= 48 ) {
+				$meta_css_vars[] = '--ops-meta-font-size:' . (int) $meta_size . 'px';
+				$classes .= ' ops-meta-has-size';
+			}
+
+			$meta_spacing = get_post_meta( $id, 'oceanwp_ps_meta_spacing', true );
+			if ( is_scalar( $meta_spacing ) && preg_match( '/^\d+$/', (string) $meta_spacing ) && (int) $meta_spacing >= 0 && (int) $meta_spacing <= 80 ) {
+				$meta_css_vars[] = '--ops-meta-spacing:' . (int) $meta_spacing . 'px';
+				$classes .= ' ops-meta-has-spacing';
+			}
+			$add_style = $meta_css_vars ? ' style="' . esc_attr( implode( ';', $meta_css_vars ) ) . '"' : '';
 
 			// Number of posts per slide for the style two
 			if ( 'two' == $style
@@ -244,13 +268,14 @@ if ( ! class_exists( 'OceanWP_Posts_Slider_Shortcode' ) ) {
 
 												<div class="line"></div>
 
-												<div class="oceanwp-post-date"><?php echo get_the_date(); ?> <?php _e( 'by', 'ocean-extra' ); ?> <?php the_author_posts_link(); ?></div>
+												<?php $this->render_post_meta( $meta_display ); ?>
 												<a href="<?php the_permalink(); ?>" class="readmore"><?php echo esc_attr( $more_text ); ?></a>
 
 												<?php
 											} elseif ( 'two' == $style ) {
 												?>
 
+												<?php $this->render_post_meta( $meta_display ); ?>
 												<div class="oceanwp-post-excerpt">
 													<p><?php ops_excerpt( 20 ); ?></p>
 													<a href="<?php the_permalink(); ?>" class="readmore"><?php echo esc_attr( $more_text ); ?></a>
@@ -291,6 +316,41 @@ if ( ! class_exists( 'OceanWP_Posts_Slider_Shortcode' ) ) {
 				// End post check
 			endif;
 
+		}
+
+		/**
+		 * Render accessible, individually selectable post date and author metadata.
+		 * Keep the existing CSS hook for custom styles and child themes.
+		 *
+		 * @since 2.1.2
+		 * @param string $meta_display Metadata choice.
+		 * @return void
+		 */
+		private function render_post_meta( $meta_display ) {
+			if ( 'none' === $meta_display ) {
+				return;
+			}
+
+			$show_date   = in_array( $meta_display, array( 'date_author', 'date_only' ), true );
+			$show_author = in_array( $meta_display, array( 'date_author', 'author_only' ), true );
+			?>
+			<div class="oceanwp-post-date">
+				<?php if ( $show_date ) : ?>
+					<time class="oceanwp-post-meta-date" datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>"><?php echo esc_html( get_the_date() ); ?></time>
+				<?php endif; ?>
+				<?php if ( $show_author ) : ?>
+					<?php
+					// Use this plugin's translation when available, while preserving
+					// existing Ocean Extra translations for upgraded installations.
+					$by_label = __( 'by', 'ocean-posts-slider' );
+					if ( 'by' === $by_label ) {
+						$by_label = __( 'by', 'ocean-extra' );
+					}
+					?>
+					<?php echo esc_html( $by_label ); ?> <?php the_author_posts_link(); ?>
+				<?php endif; ?>
+			</div>
+			<?php
 		}
 
 		/**
