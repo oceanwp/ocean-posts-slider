@@ -245,6 +245,7 @@
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
 .oceanwp-post-list.two .oceanwp-post-date a {
   color: inherit;
 }
@@ -253,6 +254,7 @@
 .oceanwp-post-list.two article:focus-within .oceanwp-post-excerpt {
   max-height: 250px;
 }
+
 .oceanwp-post-list.two article:focus-within .slide-overlay-wrap {
   background-color: #13aff0;
 }
@@ -262,12 +264,15 @@
 .oceanwp-post-list.ops-meta-has-color .oceanwp-post-date a {
   color: var(--ops-meta-color);
 }
+
 .oceanwp-post-list.ops-meta-has-size .oceanwp-post-date {
   font-size: var(--ops-meta-font-size);
 }
+
 .oceanwp-post-list.ops-meta-has-spacing .oceanwp-post-date {
   margin-bottom: var(--ops-meta-spacing);
 }
+
 .oceanwp-post-list .oceanwp-post-date a:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 3px;

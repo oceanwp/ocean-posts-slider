@@ -1,5 +1,5 @@
 === Ocean Posts Slider ===
-Contributors: oceanwp, apprimit, wpfleek
+Contributors: oceanwp, apprimit, wpfleek, benjaminprojas, cristianrossi
 Tags: slider, posts slider, oceanwp
 Requires at least: 6.8
 Tested up to: 7.1
